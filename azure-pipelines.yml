@@ -34,3 +34,9 @@ steps:
     pip install pytest pytest-azurepipelines
     pytest
   displayName: 'pytest'
+- task: NuGetCommand@2
+  inputs:
+    command: 'restore'
+    restoreSolution: '**/*.sln'
+    feedsToUse: 'select'
+    
